@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="f1-1.jpg" alt="First slide" style="height: 600px;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+  </div>
+</div>
