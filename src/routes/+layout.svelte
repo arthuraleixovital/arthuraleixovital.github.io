@@ -2,19 +2,20 @@
 	<!-- Adiciona a imagem no canto superior esquerdo -->
 	<img src="logo.png" alt="Logo" class="top-left-image" />
 
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav class="navbar navbar-expand navbar-light">
 		<div class="container-fluid d-flex justify-content-between">
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<!-- Remover o botão de toggle -->
+			<!-- <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
 					<!-- mx-auto garante a centralização -->
@@ -43,6 +44,7 @@
 		position: relative; /* Define posição relativa para referência */
 		z-index: 1; /* Garante que a barra de navegação fique abaixo da imagem */
 	}
+
 	@keyframes gradientAnimation {
 		0% {
 			background-position: 0% 50%; /* Gradiente começa à esquerda */
@@ -59,9 +61,11 @@
 	.navbar-light {
 		background-color: rgba(255, 255, 255, 0.8); /* Transparente para mostrar o gradiente */
 	}
+
 	.navbar-light .navbar-nav .nav-link {
 		color: #ffffff; /* Cor do texto */
 	}
+
 	/* Remove padding e margens padrão do body para evitar problemas */
 	body {
 		margin: 0;
@@ -82,6 +86,7 @@
 	.navbar {
 		padding-top: 10px; /* Dá espaço suficiente abaixo da imagem */
 	}
+
 	body {
 		overflow-x: hidden; /* Impede a rolagem horizontal */
 		margin: 0; /* Remove margens extras */
