@@ -45,3 +45,10 @@
   </div>
   {/each}
 </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 mt-4">
+    <div class="container text-center">
+      <p>&copy; 2025 GO F1 - Todos os direitos reservados.</p>
+    </div>
+  </footer>

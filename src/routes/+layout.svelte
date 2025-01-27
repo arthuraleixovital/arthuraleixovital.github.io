@@ -1,7 +1,3 @@
-<script>
-  let { children } = $props();
-</script>
-
 <style>
   /* Adiciona o gradiente animado apenas para a barra de navegação */
   .navbar {
@@ -55,9 +51,6 @@
   margin: 0; /* Remove margens extras */
   padding: 0; /* Remove padding extra */
   }
-.row {
-  overflow-x: hidden; /* Impede a rolagem dentro da linha */
-  }
 </style>
 
 <body>
@@ -85,10 +78,4 @@
     </div>
   </nav>
 </body>
-
-<footer class="bg-dark text-white py-3 mt-4">
-  <div class="container text-center">
-    <p>&copy; 2025 GO F1 - Todos os direitos reservados.</p>
-  </div>
-</footer>
 <slot />
