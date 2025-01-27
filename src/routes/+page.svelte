@@ -1,14 +1,8 @@
 <script>
   import { onMount } from "svelte";
-
-  let noticiasDestaque = [
-    { id: 1, titulo: "Lewis Hamilton na Ferrari", resumo: "Lewis Hamilton, 7 vezes campeão assina contrato com a Escuderia Ferrari.", imagem: "lw.jpg", link: "https://ge.globo.com/motor/formula-1/noticia/2024/02/01/mercedes-confirma-saida-de-lewis-hamilton-ao-fim-da-f1-2024.ghtml" },
-    { id: 2, titulo: "Gabriel Bortoleto na Kick Sauber", resumo: "Gabriel Bortoleto, brasileiro, campeão da F3 e F2, assina um contrato multi-anual com a Kick Sauber. ", imagem: "gb.png", link: "https://www.band.uol.com.br/esportes/automobilismo/formula-1/noticias/anuncio-gabriel-bortoleto-f1-202408272058" },
-    { id: 3, titulo: "Liam Lawson assina com Redbull Racing", resumo: "Liam Lawson, ex corredor da Visa Cash App RB, assina contrato com a Redbull Racing, substituindo o piloto Sergio Perez.", imagem: "liam.png", link: "https://ge.globo.com/motor/formula-1/noticia/2024/12/19/rbr-anuncia-liam-lawson-no-lugar-de-sergio-perez-na-f1-2025.ghtml" },
-  ];
+  import { noticias } from '$lib/noticias.js';
 
   let gp = "Austrália"
-
 
 // Defina a data do próximo Grand Prix
 const grandPrixDate = new Date("2025-03-14T04:00:00");
@@ -47,9 +41,8 @@ onMount(() => {
 
 <main>
   <!-- Header -->
-  <header class="bg-dark text-white py-3">
+  <header class="bg-dark text-white py-3" style="height: 70px;">
     <div class="container text-center">
-      <img src="logo.png" style="width: 200px;">
       <p class="lead">As últimas notícias do mundo da Fórmula 1</p>
     </div>
   </header>
@@ -58,17 +51,18 @@ onMount(() => {
   <section class="container mt-4">
     <h2 class="mb-4">Notícias em Destaque</h2>
     <div class="row">
-      {#each noticiasDestaque as noticia}
+      {#each noticias as noticiasd}
         <div class="col-md-4">
           <div class="card mb-3 h-100" style="height: 420px; display: flex; flex-direction: column; justify-content: space-between;">
-            <img src={noticia.imagem} class="card-img-top" alt={noticia.titulo} style="object-fit: cover; height: 200px;">
+            <img src={noticiasd.imagem} class="card-img-top" alt={noticiasd.titulo} style="object-fit: cover; height: 200px;">
             <div class="card-body d-flex flex-column">
               <div>
-                <h5 class="card-title"><b>{noticia.titulo}</b></h5>
-                <p class="card-text">{noticia.resumo}</p>
+                <h5 class="card-title"><b>{noticiasd.titulo}</b></h5>
+                <p class="card-text">{noticiasd.resumo}</p>
               </div>
-              <div class="mt-auto">
-                <a href={noticia.link} class="btn btn-primary">Leia mais</a>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <a href={noticiasd.link} class="btn btn-dark">Leia mais</a>
+                <span class="text-muted">{noticiasd.datan}</span>
               </div>
             </div>
           </div>
@@ -81,7 +75,7 @@ onMount(() => {
 
     <div class="container text-center">
       <div class="timer">
-        <p class="lead">O próximo Grand Prix será na <span class="fw-bold">{gp}</span>.</p>
+        <p class="lead">O próximo Grand Prix será na <span class="fw-bold">{gp}.</span></p>
         <p>Restam apenas:</p>
         <p>
           <span class="fw-bold">{dias}</span> dias, 
@@ -90,7 +84,7 @@ onMount(() => {
           <span class="fw-bold">{segundos}</span> segundos
         </p>
       </div>
-      <img src="aust.jpg" class="card-img-top mt-4" style="height: 400px; object-fit: cover; border-radius: 12px;">
+      <img src="aust.jpg" class="card-img-top mt-4" style="height: 400px; object-fit: cover; border-radius: 12px;" alt="GP da Australia.">
     </div>
 
   <!-- Footer -->
@@ -102,10 +96,6 @@ onMount(() => {
 </main>
 
 <style>
-  h1, h2 {
-    font-family: Arial, sans-serif;
-  }
-
   .card-img-top {
     height: 200px;
     object-fit: cover;
@@ -127,6 +117,44 @@ onMount(() => {
     font-weight: bold;
     color: #dc3545;
     margin: 0 4px;
+  }
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza as transformações */
+  }
+
+  .card:hover {
+    transform: translateY(-10px); /* Eleva o card ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra maior */
+    transform: scale(1.05); /* Aumenta ligeiramente a imagem no hover */
+  }
+
+  .card img {
+    transition: transform 0.3s ease; /* Suaviza o zoom na imagem */
+  }
+   /* Estilo para o container da data e botão */
+   .card .card-body .mt-auto {
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre a data e o botão */
+    align-items: center; /* Alinha verticalmente ao centro */
+  }
+
+  /* Container flex para botão e data */
+  .card .card-body .mt-auto {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinhamento vertical */
+  }
+
+  /* Estilo do botão (à esquerda) */
+  .card .card-body .btn {
+    margin-right: auto; /* Mantém o botão no lado esquerdo */
+  }
+
+  /* Estilo da data (à direita) */
+  .card .card-body .text-muted {
+    font-size: 0.85rem; /* Tamanho da fonte da data */
+    color: #6c757d; /* Cor cinza discreta */
+    margin-left: auto; /* Empurra a data para o lado direito */
   }
 </style>
 
