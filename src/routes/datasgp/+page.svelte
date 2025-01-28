@@ -1,5 +1,6 @@
 <script>
 	import { datasgp } from '$lib/datasgp.js'; // Importe o vetor de dados dos GPs
+	import './stylesdatasgp.css';
 
 	// Estado para armazenar o filtro e os dados filtrados
 	let pesquisa = $state('');
@@ -68,32 +69,3 @@
 		<p>Contato: arthur.santos4@estudante.ifms.edu.br</p>
 	</div>
 </footer>
-
-<style>
-	.card {
-		transition:
-			transform 0.3s ease,
-			box-shadow 0.3s ease; /* Suaviza as transformações */
-		border-radius: 1rem; /* Adiciona bordas arredondadas ao card */
-	}
-
-	.card-img-top {
-		object-fit: cover;
-		height: 200px; /* Ajuste a altura das imagens */
-		transition: transform 0.3s ease; /* Efeito de zoom ao passar o mouse */
-		border-top-left-radius: 1rem; /* Mantém as bordas arredondadas da imagem */
-		border-top-right-radius: 1rem;
-	}
-
-	.card:hover {
-		transform: translateY(-10px); /* Eleva o card ao passar o mouse */
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais suave e visível */
-		transform: scale(1.05); /* Aumenta ligeiramente o card no hover */
-	}
-
-	.card-body {
-		background-color: #f8f9fa; /* Cor de fundo clara */
-		border-bottom-left-radius: 1rem; /* Mantém as bordas arredondadas no corpo do card */
-		border-bottom-right-radius: 1rem;
-	}
-</style>
