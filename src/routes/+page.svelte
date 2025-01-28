@@ -5,16 +5,13 @@
 
 	let gp = 'Austrália';
 
-	// Defina a data do próximo Grand Prix
 	const grandPrixDate = new Date('2025-03-14T04:00:00');
 
-	// Variáveis para exibir o tempo restante
 	let dias = 0;
 	let horas = 0;
 	let minutos = 0;
 	let segundos = 0;
 
-	// Função para calcular o tempo restante
 	function calcularTempoRestante() {
 		const agora = new Date();
 		const diferenca = grandPrixDate - agora;
@@ -25,29 +22,26 @@
 			minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
 			segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 		} else {
-			dias = horas = minutos = segundos = 0; // Timer zerado
+			dias = horas = minutos = segundos = 0;
 		}
 	}
 
-	// Atualize o contador a cada segundo
 	onMount(() => {
 		const interval = setInterval(() => {
 			calcularTempoRestante();
 		}, 1000);
 
-		return () => clearInterval(interval); // Limpa o intervalo quando o componente é destruído
+		return () => clearInterval(interval);
 	});
 </script>
 
 <main>
-	<!-- Header -->
 	<header class="bg-dark text-white py-3" style="height: 70px;">
 		<div class="container text-center">
 			<p class="lead">As últimas notícias do mundo da Fórmula 1</p>
 		</div>
 	</header>
 
-	<!-- Notícias em destaque -->
 	<section class="container mt-4">
 		<h2 class="mb-4">Notícias em Destaque</h2>
 		<div class="row">

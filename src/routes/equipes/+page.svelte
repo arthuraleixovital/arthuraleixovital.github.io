@@ -3,9 +3,7 @@
 	import './stylesequipes.css';
 </script>
 
-<!-- Adicionando uma margem superior para afastar os cards da navbar -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-	<!-- mt-5 adiciona uma margem superior -->
 	{#each equipes as equipe}
 		<div class="col">
 			<div class="card shadow-lg rounded-3 h-100">
@@ -23,7 +21,6 @@
 	{/each}
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-white py-3 mt-4">
 	<div class="container text-center">
 		<p>&copy; 2025 GO F1 - Todos os direitos reservados.</p>

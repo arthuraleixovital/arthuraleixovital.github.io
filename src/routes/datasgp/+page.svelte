@@ -1,19 +1,15 @@
 <script>
-	import { datasgp } from '$lib/datasgp.js'; // Importe o vetor de dados dos GPs
+	import { datasgp } from '$lib/datasgp.js';
 	import './stylesdatasgp.css';
 
-	// Estado para armazenar o filtro e os dados filtrados
 	let pesquisa = $state('');
 	let filtrados = $state(datasgp);
 
-	// Função para filtrar os GPs com base na pesquisa
 	function filtrarGp() {
 		if (pesquisa.trim() === '') {
-			filtrados = datasgp; // Se a pesquisa estiver vazia, exibe todos os GPs
+			filtrados = datasgp;
 		} else {
-			filtrados = datasgp.filter(
-				(dgp) => dgp.nome.toLowerCase().includes(pesquisa.toLowerCase()) // Filtra pelo nome
-			);
+			filtrados = datasgp.filter((dgp) => dgp.nome.toLowerCase().includes(pesquisa.toLowerCase()));
 		}
 	}
 </script>
@@ -34,7 +30,6 @@
 	</div>
 </div>
 
-<!-- Cartões dos GPs filtrados -->
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 	{#each filtrados as dgp}
 		<div class="col">
@@ -62,7 +57,6 @@
 	{/each}
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-white py-3 mt-4">
 	<div class="container text-center">
 		<p>&copy; 2025 GO F1 - Todos os direitos reservados.</p>

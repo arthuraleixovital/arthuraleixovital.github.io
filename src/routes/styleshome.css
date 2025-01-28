@@ -1,62 +1,59 @@
-    .card-img-top {
-		height: 200px;
-		object-fit: cover;
-	}
+.card-img-top {
+	height: 200px;
+	object-fit: cover;
+}
 
-	.timer {
-		font-family: Arial, sans-serif;
-		font-size: 1.5rem;
-		text-align: center;
-		padding: 1rem;
-		background-color: #f8f9fa;
-		border-radius: 8px;
-		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-		display: inline-block;
-		margin: auto;
-	}
+.timer {
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 1rem;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	margin: auto;
+}
 
-	.timer span {
-		font-weight: bold;
-		color: #dc3545;
-		margin: 0 4px;
-	}
-	.card {
-		transition:
-			transform 0.3s ease,
-			box-shadow 0.3s ease; /* Suaviza as transformações */
-	}
+.timer span {
+	font-weight: bold;
+	color: #dc3545;
+	margin: 0 4px;
+}
+.card {
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
 
-	.card:hover {
-		transform: translateY(-10px); /* Eleva o card ao passar o mouse */
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra maior */
-		transform: scale(1.05); /* Aumenta ligeiramente a imagem no hover */
-	}
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+	transform: scale(1.05);
+}
 
-	.card img {
-		transition: transform 0.3s ease; /* Suaviza o zoom na imagem */
-	}
-	/* Estilo para o container da data e botão */
-	.card .card-body .mt-auto {
-		display: flex;
-		justify-content: space-between; /* Distribui espaço entre a data e o botão */
-		align-items: center; /* Alinha verticalmente ao centro */
-	}
+.card img {
+	transition: transform 0.3s ease;
+}
 
-	/* Container flex para botão e data */
-	.card .card-body .mt-auto {
-		display: flex;
-		justify-content: space-between; /* Espaço entre os itens */
-		align-items: center; /* Alinhamento vertical */
-	}
+.card .card-body .mt-auto {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
-	/* Estilo do botão (à esquerda) */
-	.card .card-body .btn {
-		margin-right: auto; /* Mantém o botão no lado esquerdo */
-	}
+.card .card-body .mt-auto {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
-	/* Estilo da data (à direita) */
-	.card .card-body .text-muted {
-		font-size: 0.85rem; /* Tamanho da fonte da data */
-		color: #6c757d; /* Cor cinza discreta */
-		margin-left: auto; /* Empurra a data para o lado direito */
-	}
+.card .card-body .btn {
+	margin-right: auto;
+}
+
+.card .card-body .text-muted {
+	font-size: 0.85rem;
+	color: #6c757d;
+	margin-left: auto;
+}
